@@ -20,6 +20,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     app.use(express.json());
 
 
+    app.get('/', (req,res) =>{
+        res.send('Hello World')
+    })
+
 
     app.get('/save', async (req,res)=>{
 

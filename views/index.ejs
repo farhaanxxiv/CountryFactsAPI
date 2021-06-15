@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    </head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
 
 <style>
-    body{
-        background-color: #1A1A1D;
-    }
-    .head{
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-bottom:0;
-        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size:70px;
-        color:#C3073F;
-       
-        
+    :root {
+        --background: #1A1A1D;
+        --link-color: #b9b9b9;
     }
 
-    .sub-heading{
+
+    .dark-theme {
+        --background: #ffffff;
+        --link-color: #1a1a1d;
+    }
+
+
+    body {
+        background-color: var(--background);
+
+    }
+
+    .head {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 0;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 70px;
+        color: #C3073F;
+
+
+    }
+
+    .sub-heading {
         width: fit-content;
         margin-top: 10px;
         margin-left: 25px;
@@ -29,60 +44,101 @@
         font-family: 'Courier New', Courier, monospace;
         font-size: 23px;
         font-weight: bold;
-        color:#950740;
+        color: #950740;
         border-style: solid;
         border-color: rgb(128, 126, 126);
         border-width: 1px;
     }
 
-    .link{
+    .link {
         margin-left: 25px;
         font-family: 'Courier New', Courier, monospace;
-        color:#b9b9b9;
+        color: var(--link-color);
     }
 
-    .countries{
+    .countries {
         margin-top: 30px;
         margin-left: 25px;
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
-        color:#b9b9b9;
+        color: var(--link-color);
         white-space: pre;
-        
+
 
     }
 
+    img{
+        width: 65px;
+        height: 65px;
+        float: right;
+    }
 
-    @media (min-width: 200px) and (max-width: 520px)  { 
-        .head{
-        font-size: 45px;
+    @media (min-width: 200px) and (max-width: 520px) {
+        .head {
+            font-size: 45px;
         }
-        .sub-heading{
+
+        .sub-heading {
             font-size: 15px;
-        }    
-    }
-
-    @media (min-width: 521px) and (max-width:600px)  { 
-        .head{
-        font-size: 55px;
         }
-        .sub-heading{
-            font-size: 18px;
-        }    
+
+        img{
+        width: 40px;
+        height: 40px;
+    }
     }
 
+    @media (min-width: 521px) and (max-width:600px) {
+        .head {
+            font-size: 55px;
+        }
 
+        .sub-heading {
+            font-size: 18px;
+        }
+
+        img{
+        width: 50px;
+        height: 50px;
+        }
+    }
 </style>
 
 
-    <body>
-        <p class = 'head'>Country Facts API</h1>
-        <p class = 'sub-heading'>Api for getting a random fact about a country</p>
-        <p class ='link'>https://countryfacts-api.herokuapp.com/country</p>
-        <p class ='countries'>Available Countries:
-India   /ind
-        </p>
-    </body>
+<body>
+    <img id='togglebtn' onclick='darkModeToggle()' src='.././img/light.png' />
 
+    <p class='head'>Country Facts API</h1>
+    <p class='sub-heading'>Api for getting a random fact about a country</p>
+    <p class='link'>https://countryfacts-api.herokuapp.com/country</p>
+    <p class='countries'>Available Countries:
+        India /ind
+    </p>
+</body>
+
+<script>
+    let mode = 'd';
+
+    function darkModeToggle() {
+        var element = document.body;
+        element.classList.toggle("dark-theme");
+        if (mode === 'd') {
+            mode = 'l'
+        } else {
+            mode = 'd';
+        }
+
+        var imgElement = document.getElementById('togglebtn');
+
+        if (mode === 'd') imgElement.src = '.././img/light.png';
+        
+         else imgElement.src = '.././img/dark.png';
+            
+    
+
+
+    }
+
+</script>
 
 </html>

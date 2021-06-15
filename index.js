@@ -5,6 +5,8 @@ const Country = require('./countrySchema')
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }))
+app.use('/img', express.static('img'));
+
 
 
 const uri = "mongodb+srv://farhaanxxiv:farhaan24@cluster0.tsjcz.mongodb.net/Countries?retryWrites=true&w=majority";

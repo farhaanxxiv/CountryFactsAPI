@@ -61,19 +61,15 @@ app.get('/:id', async (req,res) => {
 
     try{
         let post = await Country.find({name:req.params.id})
-        
         let rand = Math.floor(Math.random() * 4);
-        //console.log(rand)
         res.send(post[0].facts[rand])
-
 
         }catch(e){
     
-            console.log(e);
-                res.send(e);
+            //console.log(e);
+            res.send('Incorrect Country or Country Not Available')
         }
 
-        
 })
 
  

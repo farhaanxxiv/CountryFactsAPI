@@ -15,6 +15,6 @@ const string = {
 
   });
 
-  module.exports = new mongoose.model('Country', countrySchema);
+  module.exports = new mongoose.model('Country', countrySchema,'Country');
   
  

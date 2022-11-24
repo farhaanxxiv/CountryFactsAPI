@@ -9,7 +9,7 @@ app.use('/img', express.static('img'));
 
 
 
-const uri = "mongodb+srv://farhaanxxiv:farhaan24@cluster0.tsjcz.mongodb.net/Countries?retryWrites=true&w=majority";
+const uri = "mongodb+srv://farhaanxxiv:farhaan24@buymeachai.hrdm0x6.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -70,7 +70,7 @@ app.get('/:id', async (req,res) => {
         }catch(e){
     
             console.log(e);
-                res.send('Incorrect Country or Country Not Available')
+                res.send(e);
         }
 
         

@@ -9,7 +9,7 @@ app.use('/img', express.static('img'));
 
 
 
-const uri = "mongodb+srv://farhaanxxiv:farhaan24@cluster0.tsjcz.mongodb.net/Countries?retryWrites=true&w=majority";
+const uri = "mongodb+srv://farhaanxxiv:farhaan24@buymeachai.hrdm0x6.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -61,20 +61,16 @@ app.get('/:id', async (req,res) => {
 
     try{
         let post = await Country.find({name:req.params.id})
-        
         let rand = Math.floor(Math.random() * 4);
-        //console.log(rand)
         res.send(post[0].facts[rand])
-
 
         }catch(e){
     
-            console.log(e);
-                res.send('Incorrect Country or Country Not Available')
+            //console.log(e);
+            res.send('Incorrect Country or Country Not Available')
         }
 
-        
 })
 
  
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 8000);

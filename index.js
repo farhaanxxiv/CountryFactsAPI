@@ -73,4 +73,8 @@ app.get('/:id', async (req,res) => {
 })
 
  
+
+
 app.listen(process.env.PORT || 8000);
+
+app.listen(process.env.PORT || 4000);

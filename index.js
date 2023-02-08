@@ -13,11 +13,11 @@ const uri = "mongodb+srv://farhaanxxiv:farhaan24@buymeachai.hrdm0x6.mongodb.net/
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        console.log("database connected");
+        console.log("HI USER");
     })
 
     .catch(err => {
-        console.log("Could not connect", err); 
+        console.log("Maybe I have not looked into this project since a long time and some services needs to be renewed", err); 
     });
 
 
